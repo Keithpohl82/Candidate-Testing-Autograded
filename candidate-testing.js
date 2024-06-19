@@ -29,18 +29,20 @@ function askQuestion() {
   //candidateAnswer = input.question(question);
   for(i = 0; i < questions.length; i++){
     candidateAnswers = questions.question(i);
+    
   }
 }
 
 function gradeQuiz(candidateAnswers) {
-
+ 
   // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly // 
+
   let numCorrect = 0;
   let numPossible = questions.length;
 for(i = 0; i < questions.length; i++){
   console.log(`Your answer was: ${candidateAnswers[i]}
     The correct answer is: ${correctAnswers[i]}`)
-    if (candidateAnswers[i] == correctAnswers[i]) {
+    if (candidateAnswers[i].toLowerCase() == correctAnswers[i].toLowerCase()) {
       numCorrect++;
     }
 }
@@ -56,7 +58,7 @@ function runProgram() {
   // TODO 1.1c: Greet candidate using their name //
    console.log("Welcome " + candidateName);
   askQuestion();
-  gradeQuiz(this.candidateAnswers);
+  gradeQuiz(this.candidateAnswers.toLowerCase());
 }
 
 // ----------- Don't write any code or change any code below this line ---------- //
