@@ -62,7 +62,7 @@ function runProgram() {
   gradeQuiz(this.candidateAnswers);
 }
 
-runProgram();
+
 
 // ----------- Don't write any code or change any code below this line ---------- //
 module.exports = {
