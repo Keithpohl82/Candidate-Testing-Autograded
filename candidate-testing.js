@@ -20,8 +20,9 @@ let candidateAnswers;
 
 function askForName() {
   // TODO 1.1b: Ask for candidate's name //
-  candidateName = input.question("What is your name? ");
 
+
+  candidateName = input.question("What is your name? ");
 }
 
 function askQuestion() {
@@ -58,7 +59,7 @@ function runProgram() {
   // TODO 1.1c: Greet candidate using their name //
    console.log("Welcome " + candidateName);
   askQuestion();
-  gradeQuiz(this.candidateAnswers.toLowerCase());
+  gradeQuiz(this.candidateAnswers);
 }
 
 // ----------- Don't write any code or change any code below this line ---------- //
