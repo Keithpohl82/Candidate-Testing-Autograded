@@ -35,13 +35,18 @@ function askQuestion() {
 function gradeQuiz(candidateAnswers) {
 
   // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly // 
+  let numCorrect = 0;
+  let numPossible = questions.length;
 for(i = 0; i < questions.length; i++){
   console.log(`Your answer was: ${candidateAnswers[i]}
     The correct answer is: ${correctAnswers[i]}`)
+    if (candidateAnswers[i] == correctAnswers[i]) {
+      numCorrect++;
+    }
 }
 
   let grade;  //TODO 3.2 use this variable to calculate the candidates score.
-
+grade = (numCorrect / numPossible) * 100;
 
   return grade;
 }
