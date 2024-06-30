@@ -41,19 +41,29 @@ function gradeQuiz(candidateAnswers) {
 
   let numCorrect = 0;
   let numPossible = questions.length;
+  console.log(`Candidate Name: ${candidateName}`);
 for(i = 0; i < questions.length; i++){
-  console.log(`Your answer was: ${candidateAnswers[i]}
-    The correct answer is: ${correctAnswers[i]}`)
+  console.log(`${i + 1}) ${questions[i]}\nYour answer: ${candidateAnswers[i]}\nCorrect answer: ${correctAnswers[i]}\n`);
     if (candidateAnswers[i].toLowerCase() == correctAnswers[i].toLowerCase()) {
       numCorrect++;
     }
+    
 }
 
   let grade;  //TODO 3.2 use this variable to calculate the candidates score.
 grade = (numCorrect / numPossible) * 100;
-
-  return grade;
+  console.log(`>>> Overall Grade: ${grade}% (${numCorrect} of ${numPossible} responses correct) <<<`);
+  if (grade <= 79){
+    console.log("<<< Status: FAILED ");
+  } else {
+    console.log("<<< Status: PASSED ");
+  }
+  return grade; 
 }
+
+//Below may need to be moved into the grade function
+
+
 
 function runProgram() {
   askForName();
